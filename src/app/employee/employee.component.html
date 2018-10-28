@@ -29,4 +29,4 @@
 </div>
 
 <!-- {{empList | json}} -->
-<app-employee-list [employeeList]="empList" [title]="'Employee List'"></app-employee-list>
+<app-employee-list [employeeList]="empList" [title]="'Employee List'" (sendToParent)="receiveFromChild($event)"></app-employee-list>

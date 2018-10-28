@@ -26,4 +26,9 @@ export class EmployeeComponent {
   toggle() {
     this.hidden = !this.hidden;
   }
+
+  receiveFromChild(employee:  IEmployee) {
+    console.log(employee);
+    this.employee = employee;
+  }
 }
