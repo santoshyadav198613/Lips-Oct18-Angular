@@ -29,24 +29,4 @@
 </div>
 
 <!-- {{empList | json}} -->
-
-<table [ngClass]="hidden ?'table':'' ">
-  <thead>
-    <th>
-      Id
-    </th>
-    <th>
-      Name
-    </th>
-    <th>
-      Address
-    </th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let employee of empList">
-      <td>{{employee.id}}</td>
-      <td [innerText]="employee.name"></td>
-      <td>{{employee.address}}</td>
-    </tr>
-  </tbody>
-</table>
+<app-employee-list [employeeList]="empList" [title]="'Employee List'"></app-employee-list>
