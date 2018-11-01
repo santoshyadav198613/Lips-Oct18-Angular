@@ -28,5 +28,6 @@
   Address: {{employee.address}}
 </div>
 
+<button class="btn btn-primary" (click)="addEmployee()">Add New Employee</button>
 <!-- {{empList | json}} -->
 <app-employee-list [employeeList]="empList" [title]="'Employee List'" (sendToParent)="receiveFromChild($event)"></app-employee-list>

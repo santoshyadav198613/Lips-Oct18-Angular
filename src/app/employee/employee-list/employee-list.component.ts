@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, OnChanges, EventEmitter, SimpleChanges } from '@angular/core';
 import { IEmployee } from '../IEmployee';
 
 @Component({
@@ -6,7 +6,7 @@ import { IEmployee } from '../IEmployee';
   templateUrl: './employee-list.component.html',
   styleUrls: ['./employee-list.component.css']
 })
-export class EmployeeListComponent implements OnInit {
+export class EmployeeListComponent implements OnInit, OnChanges {
 
   @Input() employeeList: IEmployee;
   @Input() title: string;
@@ -14,7 +14,13 @@ export class EmployeeListComponent implements OnInit {
 
   constructor() { }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('On Change is called');
+    console.log(changes);
+  }
+  
   ngOnInit() {
+    console.log('OnInit is called');
   }
 
   selectEmployee(employee: IEmployee) {
