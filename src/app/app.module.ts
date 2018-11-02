@@ -10,6 +10,7 @@ import { BookComponentComponent } from './book-component/book-component.componen
 import { BooklistComponentComponent } from './book-component/booklist-component/booklist-component.component';
 import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
+import { ContainerComponent } from './container/container.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { ProductListComponent } from './product/product-list/product-list.compon
     BooklistComponentComponent,
     ProductComponent,
     ProductListComponent,
+    ContainerComponent,
     
   ],
   imports: [
