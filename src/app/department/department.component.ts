@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,ViewEncapsulation} from '@angular/core';
 import {IDepartment} from './IDepartment';
 import { from } from 'rxjs';
 @Component({
   selector: 'app-department',
   templateUrl: './department.component.html',
-  styleUrls: ['./department.component.css']
+  styleUrls: ['./department.component.css'],
+  encapsulation :ViewEncapsulation.None,
+  host : { class : 'app-department' }
 })
 export class DepartmentComponent implements OnInit {
 

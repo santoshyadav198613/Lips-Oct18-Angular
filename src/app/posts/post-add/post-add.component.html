@@ -1,0 +1,19 @@
+<h1>
+  Add Post
+</h1>
+
+{{posts | json}}
+<form (submit)="addPost()">
+  <div class="form-group">
+    <input type="number" [(ngModel)] ="posts.userId" name="userId" class="form-control" placeholder="User Id">
+  </div>
+  <div class="form-group">
+    <input type="text" [(ngModel)] ="posts.title" name="title" class="form-control" placeholder="Title">
+  </div>
+  <div class="form-group">
+    <input type="text" [(ngModel)] ="posts.body" name="body" class="form-control" placeholder="Body">
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Add Post</button>
+  </div>
+</form>
