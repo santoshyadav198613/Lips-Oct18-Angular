@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';// add for httpclient for rest api..
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,7 @@ import { PostAddComponent } from './posts/post-add/post-add.component';
 import { PhotosComponent } from './photos/photos.component';
 
 import { CustominterceptorService } from './interceptor/custominterceptor.service';
+import { EmployeeOnboardingComponent } from './employee/employee-onboarding/employee-onboarding.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,15 @@ import { CustominterceptorService } from './interceptor/custominterceptor.servic
     PostsListComponent,
     PostAddComponent,
     PhotosComponent,
+    EmployeeOnboardingComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, //add this module.
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }],

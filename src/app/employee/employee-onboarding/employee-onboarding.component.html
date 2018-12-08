@@ -1,0 +1,39 @@
+<h1>
+  Onboarding Form
+</h1>
+{{onboardingForm.invalid}}
+{{onboardingForm.valid}}
+{{onboardingForm.pristine}}
+{{onboardingForm.dirty}}
+{{onboardingForm.value | json}}
+<form [formGroup]="onboardingForm" novalidate>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="firstName" name="firstName" placeholder="First Name">
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" formControlName="lastName" name="lastName" placeholder="Last Name">
+  </div>
+  <div class="form-group">
+      <input class="form-control" type="email" formControlName="email" name="email" placeholder="Email">
+  </div>
+  <div class="form-group">
+      <input class="form-control" type="date" formControlName="dob" name="dob" placeholder="Date of Birth">
+  </div>
+  <div formGroupName="address">
+      <div class="form-group">
+          <input class="form-control" type="text" formControlName="addressLine1" name="addr1" placeholder="Address Line1">
+      </div>
+      <div class="form-group">
+          <input class="form-control" type="text" formControlName="addressLine2" name="addr2" placeholder="Address Line12">
+      </div>
+      <div class="form-group">
+          <input class="form-control" type="text" formControlName="city" name="city" placeholder="City">
+      </div>
+      <div class="form-group">
+          <input class="form-control" type="text" formControlName="pin" name="pin" placeholder="Pin">
+      </div>
+  </div>
+  <div class="form-group">
+    <button [disabled]="onboardingForm.invalid" type="submit" class="btn btn-primary">Save</button>
+  </div>
+</form>
