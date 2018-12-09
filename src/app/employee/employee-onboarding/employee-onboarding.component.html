@@ -10,6 +10,9 @@
     <div class="form-group">
         <input class="form-control" type="text" formControlName="firstName" name="firstName" placeholder="First Name">
     </div>
+    <div>
+        {{onboardingForm.get('firstName').errors|json}}
+    </div>
     <div class="form-group">
         <input class="form-control" type="text" formControlName="lastName" name="lastName" placeholder="Last Name">
     </div>
@@ -32,6 +35,9 @@
         <div class="form-group">
             <input class="form-control" type="text" formControlName="pin" name="pin" placeholder="Pin">
         </div>
+        <div>
+            {{onboardingForm.get('address.pin').errors|json}}
+        </div>
     </div>
     <div class="form-group">
         <button type="button" class="btn btn-success" (click)="addEmployer()">Add New Employer</button>
@@ -41,6 +47,9 @@
             <div class="form-group" [formGroupName]="i">
                 <div class="form-group">
                     <input class="form-control" type="text" formControlName="employer" name="employer" placeholder="Previous Employer">
+                </div>
+                <div>
+                    {{onboardingForm.get(["experience",i,"employer"]).errors|json}}
                 </div>
                 <div class="form-group">
                     <input class="form-control" type="date" formControlName="startDate" name="sdate" placeholder="Start Date">
@@ -52,8 +61,7 @@
                     <input class="form-control" type="text" formControlName="position" name="position" placeholder="Position">
                 </div>
                 <div *ngIf="i>0" class="form-group">
-                    <button type="button" class="btn btn-danger"
-                     (click)="removeEmployer(i)">
+                    <button type="button" class="btn btn-danger" (click)="removeEmployer(i)">
                         Remove Employer
                     </button>
                 </div>
