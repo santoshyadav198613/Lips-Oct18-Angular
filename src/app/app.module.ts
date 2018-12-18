@@ -21,6 +21,7 @@ import { PhotosComponent } from './photos/photos.component';
 
 import { CustominterceptorService } from './interceptor/custominterceptor.service';
 import { EmployeeOnboardingComponent } from './employee/employee-onboarding/employee-onboarding.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { EmployeeOnboardingComponent } from './employee/employee-onboarding/empl
     PostAddComponent,
     PhotosComponent,
     EmployeeOnboardingComponent,
+    NotfoundComponent,
 
   ],
   imports: [

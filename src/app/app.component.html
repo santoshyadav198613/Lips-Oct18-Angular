@@ -1,29 +1,21 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="department">Department</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="posts">Posts</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="photos">Photos</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="book">Book</a>
+    </li>
+  </ul>
+</nav>
+
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-<!-- 
-  <div [ngSwitch]="role">
-    <div *ngSwitchCase="'Admin'">
-      <app-employee></app-employee>
-    </div>
-    <div *ngSwitchCase="'User'">
-      <app-department></app-department>
-    </div>
-    <div *ngSwitchDefault>
-        No role defined
-      </div>
-  </div> -->
-  
- <!-- <app-container>
-    <app-employee></app-employee>
-     <app-product></app-product> 
-    <app-department></app-department>
-</app-container>  -->
- 
-  
- <!-- <app-book-component></app-book-component> -->
-
- <app-employee></app-employee>
- <!-- <app-posts></app-posts> 
- <app-photos></app-photos> -->
- <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
