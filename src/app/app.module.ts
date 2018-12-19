@@ -20,6 +20,7 @@ import { PhotosComponent } from './photos/photos.component';
 import { CustominterceptorService } from './interceptor/custominterceptor.service';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { EmployeeModule } from './employee/employee.module';
+import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [
@@ -30,9 +31,6 @@ import { EmployeeModule } from './employee/employee.module';
     ProductComponent,
     ProductListComponent,
     ContainerComponent,
-    PostsComponent,
-    PostsListComponent,
-    PostAddComponent,
     PhotosComponent,
     NotfoundComponent,
 
@@ -43,7 +41,8 @@ import { EmployeeModule } from './employee/employee.module';
     HttpClientModule, //add this module.
     FormsModule,
     ReactiveFormsModule,
-    EmployeeModule
+    EmployeeModule,
+    PostsModule
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }],
