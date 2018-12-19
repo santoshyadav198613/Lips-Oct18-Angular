@@ -5,9 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EmployeeComponent } from './employee/employee.component';
 import { DepartmentComponent } from './department/department.component';
-import { EmployeeListComponent } from './employee/employee-list/employee-list.component';
 import { BookComponentComponent } from './book-component/book-component.component';
 import { BooklistComponentComponent } from './book-component/booklist-component/booklist-component.component';
 import { ProductComponent } from './product/product.component';
@@ -20,15 +18,13 @@ import { PostAddComponent } from './posts/post-add/post-add.component';
 import { PhotosComponent } from './photos/photos.component';
 
 import { CustominterceptorService } from './interceptor/custominterceptor.service';
-import { EmployeeOnboardingComponent } from './employee/employee-onboarding/employee-onboarding.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { EmployeeModule } from './employee/employee.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeeComponent,
     DepartmentComponent,
-    EmployeeListComponent,
     BookComponentComponent,
     BooklistComponentComponent,
     ProductComponent,
@@ -38,7 +34,6 @@ import { NotfoundComponent } from './notfound/notfound.component';
     PostsListComponent,
     PostAddComponent,
     PhotosComponent,
-    EmployeeOnboardingComponent,
     NotfoundComponent,
 
   ],
@@ -47,7 +42,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     AppRoutingModule,
     HttpClientModule, //add this module.
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    EmployeeModule
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }],
