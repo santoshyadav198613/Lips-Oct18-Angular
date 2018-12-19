@@ -12,9 +12,6 @@ import { ProductComponent } from './product/product.component';
 import { ProductListComponent } from './product/product-list/product-list.component';
 import { ContainerComponent } from './container/container.component';
 import { ProductService } from './product/services/product.service';
-import { PostsComponent } from './posts/posts.component';
-import { PostsListComponent } from './posts/posts-list/posts-list.component';
-import { PostAddComponent } from './posts/post-add/post-add.component';
 import { PhotosComponent } from './photos/photos.component';
 
 import { CustominterceptorService } from './interceptor/custominterceptor.service';
@@ -32,17 +29,16 @@ import { PostsModule } from './posts/posts.module';
     ProductListComponent,
     ContainerComponent,
     PhotosComponent,
-    NotfoundComponent,
-
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule, //add this module.
     FormsModule,
     ReactiveFormsModule,
     EmployeeModule,
-    PostsModule
+    PostsModule,
+    AppRoutingModule
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }],
