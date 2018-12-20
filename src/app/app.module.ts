@@ -18,6 +18,7 @@ import { CustominterceptorService } from './interceptor/custominterceptor.servic
 import { NotfoundComponent } from './notfound/notfound.component';
 import { EmployeeModule } from './employee/employee.module';
 import { PostsModule } from './posts/posts.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PostsModule } from './posts/posts.module';
     ProductListComponent,
     ContainerComponent,
     PhotosComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
