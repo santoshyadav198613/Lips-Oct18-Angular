@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    //this.routeService.events.subscribe((event) => console.log(event));
   }
 
   login() {
