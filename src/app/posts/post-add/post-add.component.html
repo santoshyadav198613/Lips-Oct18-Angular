@@ -2,10 +2,10 @@
   Add Post
 </h1>
 
-{{postForm.valid | json }}
+<!-- {{postForm.valid | json }}
 {{postForm.invalid | json }}
 {{postForm.pristine | json }}
-{{postForm.dirty | json }}
+{{postForm.dirty | json }} -->
 <!-- {{posts | json}} -->
 <form #postForm="ngForm" (submit)="addPost();postForm.reset()" novalidate>
   <div class="form-group">
@@ -27,7 +27,11 @@
   <div class="form-group">
     <input type="text" required [(ngModel)]="posts.body" name="body" class="form-control" placeholder="Body">
   </div>
-  <div class="form-group">
+  <div *ngIf="posts.id === 0 " class="form-group">
     <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary">Add Post</button>
+  </div>
+
+  <div *ngIf="posts.id > 0 " class="form-group">
+    <button type="submit" [disabled]="postForm.invalid" class="btn btn-primary">Update Post</button>
   </div>
 </form>

@@ -22,4 +22,12 @@ export class PostsService {
 
     return this.http.post<Iposts>('https://jsonplaceholder.typicode.com/posts', post);
   }
+
+  getPostById(id: number) {
+    return this.http.get<Iposts>('https://jsonplaceholder.typicode.com/posts/' + id);
+  }
+
+  updatePostById(post: Iposts) {
+    return this.http.put<Iposts>('https://jsonplaceholder.typicode.com/posts/' + post.id, post);
+  }
 }

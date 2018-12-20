@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Iposts } from '../service/Iposts';
 import { PostsService } from '../service/posts.service';
 
@@ -15,13 +16,31 @@ export class PostAddComponent implements OnInit {
     title: '',
     userId: 0
   };
-  constructor(private postsService: PostsService) { }
+
+  id: number = 0;
+
+  constructor(private postsService: PostsService,
+    private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.params.subscribe((data) => {
+      this.id = data['id'];
+      if (this.id > 0) {
+        this.postsService.getPostById(this.id).subscribe(
+          (response) => {
+            this.posts = response;
+          })
+      }
+    });
   }
 
   addPost() {
-    this.postsService.addPost(this.posts).subscribe((data) => console.log(data));
-    console.log(this.posts);
+    if (this.posts.id > 0) {
+      this.postsService.updatePostById(this.posts).subscribe((data) => this.posts = data);
+      console.log(this.posts);
+    } else {
+      this.postsService.addPost(this.posts).subscribe((data) => console.log(data));
+      console.log(this.posts);
+    }
   }
 }
