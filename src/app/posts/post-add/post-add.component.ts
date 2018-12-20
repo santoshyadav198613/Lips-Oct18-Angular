@@ -23,8 +23,8 @@ export class PostAddComponent implements OnInit {
     private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.route.params.subscribe((data) => {
-      this.id = data['id'];
+    this.route.paramMap.subscribe((data) => {
+      this.id = + data.get('id');
       if (this.id > 0) {
         this.postsService.getPostById(this.id).subscribe(
           (response) => {
