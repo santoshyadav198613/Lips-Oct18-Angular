@@ -7,9 +7,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'login' , component : LoginComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'department', component: DepartmentComponent },
-  { path: 'photos', component: PhotosComponent },
+  {
+    path: 'photos', component: PhotosComponent,
+    data: {
+      title: 'Photos List',
+      count: 10
+    }
+  },
   { path: 'book', component: BookComponentComponent },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent }
