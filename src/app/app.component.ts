@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './login/service/login.service';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,9 @@ export class AppComponent {
   title = 'HotelManagementApp-V7';
 
   role: string = 'Super-User';
+
+  constructor(public loginService: LoginService) {
+
+  }
 
 }
