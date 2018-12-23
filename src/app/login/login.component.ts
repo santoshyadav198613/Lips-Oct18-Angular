@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   login() {
     if(this.loginService.login(this.user)){
       //redirect
-      this.routeService.navigate(['/home']);
+      this.routeService.navigate(['/employee']);
     }
   }
 }

@@ -52,4 +52,8 @@ export class EmployeeOnboardingComponent implements OnInit {
     experience.removeAt(i);
   }
 
+  addEmployee(){
+    console.log(this.onboardingForm.value);
+  }
+
 }

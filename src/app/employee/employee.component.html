@@ -18,8 +18,9 @@
 <div *ngIf="hidden" [innerText]="name">
 </div>
 
-<app-employee-onboarding></app-employee-onboarding>
-
+<button type="button" routerLink="/employee/new" class="btn btn-success">
+  Add New Employee
+</button>
 {{hidden}}
 
 <button class="btn btn-success" (click)="toggle()">Toggle</button>
@@ -30,6 +31,6 @@
   Address: {{employee.address}}
 </div>
 
-<button class="btn btn-primary" (click)="addEmployee()">Add New Employee</button>
+<!-- <button class="btn btn-primary" (click)="addEmployee()">Add New Employee</button> -->
 <!-- {{empList | json}} -->
 <app-employee-list [employeeList]="empList" [title]="'Employee List'" (sendToParent)="receiveFromChild($event)"></app-employee-list>
