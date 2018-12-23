@@ -7,7 +7,7 @@ import { PostAddGuard } from './service/post-add.guard';
 
 const routes: Routes = [
   {
-    path: 'posts', component: PostsComponent,
+    path: '', component: PostsComponent,
     canActivate: [AuthGuard], canActivateChild : [PostAddGuard],
     children: [
       { path: ':id', component: PostAddComponent }

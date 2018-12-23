@@ -9,6 +9,7 @@ import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'posts', loadChildren:"./posts/posts.module#PostsModule" },
   {
     path: 'department', component: DepartmentComponent,
     canActivate: [AuthGuard]

@@ -17,7 +17,6 @@ import { PhotosComponent } from './photos/photos.component';
 import { CustominterceptorService } from './interceptor/custominterceptor.service';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { EmployeeModule } from './employee/employee.module';
-import { PostsModule } from './posts/posts.module';
 import { LoginComponent } from './login/login.component';
 
 @NgModule({
@@ -39,7 +38,7 @@ import { LoginComponent } from './login/login.component';
     FormsModule,
     ReactiveFormsModule,
     EmployeeModule,
-    PostsModule,
+    // PostsModule,
     AppRoutingModule
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
