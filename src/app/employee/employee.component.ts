@@ -13,12 +13,24 @@ export class EmployeeComponent {
 
   hidden: boolean = false;
 
-  employee: IEmployee = { id: 1, address: 'Pune', name: 'Sachin' };
+  employee: IEmployee = {
+    id: 1, address: 'Pune', name: 'Sachin',
+    dob: new Date("20-dec-1989"), salary: 1000
+  };
 
   empList: IEmployee[] = [
-    { id: 1, address: 'Pune', name: 'Sachin' },
-    { id: 2, address: 'Pune', name: 'Amit' },
-    { id: 3, address: 'Pune', name: 'Virat' }
+    {
+      id: 1, address: 'Pune', name: 'Sachin',
+      dob: new Date("20-dec-2005"), salary: 2000
+    },
+    {
+      id: 2, address: 'Pune', name: 'Amit',
+      dob: new Date("20-dec-1986"), salary: 4000
+    },
+    {
+      id: 3, address: 'Pune', name: 'Virat',
+      dob: new Date("20-dec-1998"), salary: 5000
+    }
   ];
 
   constructor() { }
@@ -28,7 +40,8 @@ export class EmployeeComponent {
   }
 
   addEmployee() {
-    this.empList = [{ id: 4, name: 'Amit', address: 'Mumbai' }];
+    this.empList = [{ id: 4, name: 'Amit', address: 'Mumbai',
+    dob: new Date("20-dec-2002"), salary: 6000 }];
   }
   receiveFromChild(employee: IEmployee) {
     console.log(employee);
