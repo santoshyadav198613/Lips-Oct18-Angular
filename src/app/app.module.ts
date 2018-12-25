@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';// add for httpclient for rest api..
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +17,8 @@ import { CustominterceptorService } from './interceptor/custominterceptor.servic
 import { NotfoundComponent } from './notfound/notfound.component';
 import { EmployeeModule } from './employee/employee.module';
 import { LoginComponent } from './login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -35,11 +36,11 @@ import { LoginComponent } from './login/login.component';
   imports: [
     BrowserModule,
     HttpClientModule, //add this module.
-    FormsModule,
-    ReactiveFormsModule,
+    SharedModule,
     EmployeeModule,
     // PostsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }],
