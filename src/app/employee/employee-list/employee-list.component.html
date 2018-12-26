@@ -1,4 +1,9 @@
 <h1>{{title}}</h1>
+
+<div class="form-group">
+  <input type="number" [(ngModel)]="amount" placeholder="Salary" name="salary">
+</div>
+
 <table class="table">
   <thead>
     <th>
@@ -11,17 +16,17 @@
       Address
     </th>
     <th>
-       DOB
-      </th>
-      <th>
-          Salary
-        </th>
+      DOB
+    </th>
+    <th>
+      Salary
+    </th>
     <th>
       Select Record
     </th>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employeeList">
+    <tr *ngFor="let employee of employeeList | salary : amount">
       <td>{{employee.id | percent}}</td>
       <td [innerText]="employee.name | uppercase"></td>
       <td>{{employee.address | lowercase}}</td>

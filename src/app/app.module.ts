@@ -32,7 +32,7 @@ import { SharedModule } from './shared/shared.module';
     PhotosComponent,
     NotfoundComponent,
     LoginComponent
-  ],
+    ],
   imports: [
     BrowserModule,
     HttpClientModule, //add this module.
