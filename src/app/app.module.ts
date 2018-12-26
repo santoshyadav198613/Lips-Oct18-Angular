@@ -19,6 +19,7 @@ import { EmployeeModule } from './employee/employee.module';
 import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { UserPipe } from './custom/user.pipe';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { SharedModule } from './shared/shared.module';
     ContainerComponent,
     PhotosComponent,
     NotfoundComponent,
-    LoginComponent
+    LoginComponent,
+    UserPipe
     ],
   imports: [
     BrowserModule,

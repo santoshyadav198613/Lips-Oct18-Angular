@@ -16,6 +16,9 @@
       <a class="nav-link" routerLink="book">Book</a>
     </li>
   </ul>
+  <div *ngIf="loginService.isLoggedIn">
+    {{loginService.currentUser | user}}
+  </div>
 </nav>
 
 <!--The content below is only a placeholder and can be replaced.-->
