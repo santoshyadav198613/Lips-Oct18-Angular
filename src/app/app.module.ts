@@ -20,6 +20,8 @@ import { LoginComponent } from './login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { UserPipe } from './custom/user.pipe';
+import { RegistrationComponent } from './registration/registration.component';
+import { EmailvalidatonDirective } from './custom/directive/emailvalidaton.directive';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { UserPipe } from './custom/user.pipe';
     PhotosComponent,
     NotfoundComponent,
     LoginComponent,
-    UserPipe
+    UserPipe,
+    RegistrationComponent,
+    EmailvalidatonDirective
     ],
   imports: [
     BrowserModule,

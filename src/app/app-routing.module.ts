@@ -6,9 +6,11 @@ import { BookComponentComponent } from './book-component/book-component.componen
 import { NotfoundComponent } from './notfound/notfound.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RegistrationComponent } from './registration/registration.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
+  { path: 'register' , component : RegistrationComponent },
   { path: 'posts', loadChildren:"./posts/posts.module#PostsModule" , canLoad : [AuthGuard] },
   {
     path: 'department', component: DepartmentComponent,
