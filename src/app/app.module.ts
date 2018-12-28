@@ -22,6 +22,8 @@ import { SharedModule } from './shared/shared.module';
 import { UserPipe } from './custom/user.pipe';
 import { RegistrationComponent } from './registration/registration.component';
 import { EmailvalidatonDirective } from './custom/directive/emailvalidaton.directive';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -46,7 +48,8 @@ import { EmailvalidatonDirective } from './custom/directive/emailvalidaton.direc
     EmployeeModule,
     // PostsModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }],
