@@ -11,7 +11,7 @@ import { RegistrationComponent } from './registration/registration.component';
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register' , component : RegistrationComponent },
-  { path: 'posts', loadChildren:"./posts/posts.module#PostsModule" , canLoad : [AuthGuard] },
+  { path: 'posts', loadChildren: './posts/posts.module#PostsModule' , canLoad : [AuthGuard] },
   {
     path: 'department', component: DepartmentComponent,
     canActivate: [AuthGuard]

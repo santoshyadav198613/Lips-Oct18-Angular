@@ -3,5 +3,5 @@ export interface IEmployee {
     name: string;
     address: string;
     dob: Date;
-    salary : number;
+    salary: number;
 }

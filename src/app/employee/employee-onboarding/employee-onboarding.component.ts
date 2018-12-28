@@ -18,13 +18,13 @@ export class EmployeeOnboardingComponent implements OnInit {
     this.onboardingForm = this.fb.group({
       firstName: new FormControl('', [Validators.required, Validators.minLength(4), Validators.max(10)]),
       lastName: new FormControl(''),
-      email: new FormControl('',[Validators.required, Validators.pattern('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]),
+      email: new FormControl('', [Validators.required, Validators.pattern('^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]),
       dob: new FormControl(''),
       address: this.fb.group({
         addressLine1: new FormControl(''),
         addressLine2: new FormControl(''),
         city: new FormControl(''),
-        pin: new FormControl('',[Validators.required,CustomValidator.validatePin])
+        pin: new FormControl('', [Validators.required, CustomValidator.validatePin])
       }),
       experience: this.fb.array([
         this.buildForm()
@@ -35,7 +35,7 @@ export class EmployeeOnboardingComponent implements OnInit {
 
   buildForm() {
     return this.fb.group({
-      employer: new FormControl('',[Validators.required]),
+      employer: new FormControl('', [Validators.required]),
       startDate: new FormControl(''),
       endDate: new FormControl(''),
       position: new FormControl('')
@@ -52,7 +52,7 @@ export class EmployeeOnboardingComponent implements OnInit {
     experience.removeAt(i);
   }
 
-  addEmployee(){
+  addEmployee() {
     console.log(this.onboardingForm.value);
   }
 

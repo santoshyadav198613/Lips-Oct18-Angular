@@ -8,7 +8,7 @@ export class LoginService {
 
   isLoggedIn = false;
   isAdmin = false;
-  currentUser : string = '';
+  currentUser = '';
   constructor() { }
 
   login(user: User) {

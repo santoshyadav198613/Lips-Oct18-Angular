@@ -18,7 +18,7 @@ export class PostsComponent implements OnInit {
     // (err)=>console.log('err'));
 
     this.route.data.subscribe(
-      (data) => this.posts = data["postList"])
+      (data) => this.posts = data['postList']);
 
   }
 

@@ -11,7 +11,7 @@ import { LoginService } from './login/service/login.service';
 export class AppComponent {
   title = 'HotelManagementApp-V7';
 
-  role: string = 'Super-User';
+  role = 'Super-User';
 
   constructor(public loginService: LoginService) {
 

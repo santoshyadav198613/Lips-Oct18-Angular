@@ -11,7 +11,7 @@ export class EmailvalidatonDirective implements Validator {
 
   validate(control: AbstractControl): ValidationErrors | null {
     if (control.value === 'test@email.com') {
-      return { validUser: false }
+      return { validUser: false };
     }
     return null;
   }

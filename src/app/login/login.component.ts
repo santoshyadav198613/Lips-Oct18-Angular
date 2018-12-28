@@ -11,23 +11,23 @@ import { User } from './service/user';
 })
 export class LoginComponent implements OnInit {
 
-  user : User = {
+  user: User = {
     password : '',
     userName : ''
   };
 
   constructor(
     private loginService: LoginService,
-    private routeService : Router
+    private routeService: Router
   ) { }
 
   ngOnInit() {
-    //this.routeService.events.subscribe((event) => console.log(event));
+    // this.routeService.events.subscribe((event) => console.log(event));
   }
 
   login() {
-    if(this.loginService.login(this.user)){
-      //redirect
+    if (this.loginService.login(this.user)) {
+      // redirect
       this.routeService.navigate(['/employee']);
     }
   }

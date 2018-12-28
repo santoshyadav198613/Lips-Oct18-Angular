@@ -9,7 +9,7 @@ export class PhotosService {
   constructor(private http: HttpClient) { }
 
   getPhotos() {
-    let request = new HttpRequest('GET',
+    const request = new HttpRequest('GET',
       'https://jsonplaceholder.typicode.com/photos',
       { reportProgress: true });
     return this.http.request(request);

@@ -17,7 +17,7 @@ export class PostAddComponent implements OnInit {
     userId: 0
   };
 
-  id: number = 0;
+  id = 0;
 
   constructor(private postsService: PostsService,
     private route: ActivatedRoute) { }
@@ -29,7 +29,7 @@ export class PostAddComponent implements OnInit {
         this.postsService.getPostById(this.id).subscribe(
           (response) => {
             this.posts = response;
-          })
+          });
       }
     });
   }

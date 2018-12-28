@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';// add for httpclient for rest api..
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http'; // add for httpclient for rest api..
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -41,7 +41,7 @@ import { EmailvalidatonDirective } from './custom/directive/emailvalidaton.direc
     ],
   imports: [
     BrowserModule,
-    HttpClientModule, //add this module.
+    HttpClientModule, // add this module.
     SharedModule,
     EmployeeModule,
     // PostsModule,

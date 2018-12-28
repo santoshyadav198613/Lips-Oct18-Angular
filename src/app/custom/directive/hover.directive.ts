@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Input, 
+import { Directive, ElementRef, Input,
   OnInit, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
@@ -16,15 +16,15 @@ export class HoverDirective implements OnInit {
   }
 
   @HostListener('mouseover') onmouseover() {
-     console.log('on mouseover event'); 
+     console.log('on mouseover event');
     //  this.el.nativeElement.style.background = 'steelblue';
-    this.renderer.setStyle(this.el.nativeElement, 'color','white');
-    this.renderer.setStyle(this.el.nativeElement, 'background','steelblue');
+    this.renderer.setStyle(this.el.nativeElement, 'color', 'white');
+    this.renderer.setStyle(this.el.nativeElement, 'background', 'steelblue');
   }
 
   @HostListener('mouseout') onmouseout() {
-    this.renderer.setStyle(this.el.nativeElement, 'color','black');
-    this.renderer.setStyle(this.el.nativeElement, 'background','transparent');
+    this.renderer.setStyle(this.el.nativeElement, 'color', 'black');
+    this.renderer.setStyle(this.el.nativeElement, 'background', 'transparent');
   }
 
 }

@@ -10,7 +10,7 @@ export class CustominterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     if (req.method === 'GET') {
       console.log(req);
-      let request = req.clone({ headers: new HttpHeaders().set('apikey', 'sdfsdgdfg') });
+      const request = req.clone({ headers: new HttpHeaders().set('apikey', 'sdfsdgdfg') });
       console.log(request);
       return next.handle(request);
     }

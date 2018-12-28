@@ -7,7 +7,7 @@ import { Iposts } from '../service/Iposts';
 })
 export class PostsListComponent implements OnInit {
 
-  @Input() postLists : Iposts[];
+  @Input() postLists: Iposts[];
   constructor() { }
 
   ngOnInit() {

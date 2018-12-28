@@ -9,27 +9,27 @@ import { IEmployee } from './IEmployee';
 })
 export class EmployeeComponent {
 
-  name: string = 'Test';
+  name = 'Test';
 
-  hidden: boolean = false;
+  hidden = false;
 
   employee: IEmployee = {
     id: 1, address: 'Pune', name: 'Sachin',
-    dob: new Date("20-dec-1989"), salary: 1000
+    dob: new Date('20-dec-1989'), salary: 1000
   };
 
   empList: IEmployee[] = [
     {
       id: 1, address: 'Pune', name: 'Sachin',
-      dob: new Date("20-dec-2005"), salary: 2000
+      dob: new Date('20-dec-2005'), salary: 2000
     },
     {
       id: 2, address: 'Pune', name: 'Amit',
-      dob: new Date("20-dec-1986"), salary: 4000
+      dob: new Date('20-dec-1986'), salary: 4000
     },
     {
       id: 3, address: 'Pune', name: 'Virat',
-      dob: new Date("20-dec-1998"), salary: 5000
+      dob: new Date('20-dec-1998'), salary: 5000
     }
   ];
 
@@ -41,7 +41,7 @@ export class EmployeeComponent {
 
   addEmployee() {
     this.empList = [{ id: 4, name: 'Amit', address: 'Mumbai',
-    dob: new Date("20-dec-2002"), salary: 6000 }];
+    dob: new Date('20-dec-2002'), salary: 6000 }];
   }
   receiveFromChild(employee: IEmployee) {
     console.log(employee);

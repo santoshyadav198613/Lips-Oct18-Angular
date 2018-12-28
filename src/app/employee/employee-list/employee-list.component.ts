@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output,EventEmitter, OnChanges,  SimpleChanges } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges,  SimpleChanges } from '@angular/core';
 import { IEmployee } from '../IEmployee';
 
 @Component({
@@ -11,16 +11,16 @@ export class EmployeeListComponent implements OnInit, OnChanges {
   @Input() employeeList: IEmployee;
   @Input() title: string;
   @Output() sendToParent: EventEmitter<IEmployee> = new EventEmitter<IEmployee>();
-  amount : number = 0;
+  amount = 0;
   constructor() { }
-  
+
 //  Onchanges Uses for child component to parent component relation without use input event..
 
   ngOnChanges(changes: SimpleChanges): void {
     console.log('On Change is called');
     console.log(changes);
   }
-  
+
   ngOnInit() {
     console.log('OnInit is called');
   }

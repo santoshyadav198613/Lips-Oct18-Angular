@@ -13,7 +13,7 @@ export class RegistrationComponent implements OnInit {
     email: '',
     firstName: '',
     lastName: ''
-  }
+  };
   constructor() { }
 
   ngOnInit() {

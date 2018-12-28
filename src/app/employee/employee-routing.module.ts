@@ -8,7 +8,7 @@ import { EmployeeOnboardingComponent } from './employee-onboarding/employee-onbo
 const routes: Routes = [
   {
     path: 'employee', component: EmployeeComponent,
-    //canActivate: [AuthGuard]
+    // canActivate: [AuthGuard]
   },
   {
     path: 'employee/new', component: EmployeeOnboardingComponent,

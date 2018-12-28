@@ -9,7 +9,7 @@ import { HttpEventType } from '@angular/common/http';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit {
-  totalLoaded: number = 0;
+  totalLoaded = 0;
   title: string;
   constructor(private photosService: PhotosService,
     private route: ActivatedRoute) { }
@@ -17,7 +17,7 @@ export class PhotosComponent implements OnInit {
   ngOnInit() {
 
     this.route.data.subscribe((data) => {
-       this.title =data.title;
+       this.title = data.title;
     });
 
     this.photosService.getPhotos().subscribe((res) => {
@@ -26,10 +26,10 @@ export class PhotosComponent implements OnInit {
           this.totalLoaded += res.loaded;
           break;
         case HttpEventType.Response:
-          console.log(res.body)
+          console.log(res.body);
           break;
 
       }
-    })
+    });
   }
 }
