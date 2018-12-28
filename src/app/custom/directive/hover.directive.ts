@@ -1,4 +1,4 @@
-import { Directive, ElementRef, 
+import { Directive, ElementRef, Input, 
   OnInit, HostListener, Renderer2 } from '@angular/core';
 
 @Directive({
@@ -6,10 +6,13 @@ import { Directive, ElementRef,
 })
 export class HoverDirective implements OnInit {
 
+  @Input('appHover') color: string;
+
   constructor(private el: ElementRef, private renderer: Renderer2 ) { }
 
   ngOnInit() {
     console.log(this.el.nativeElement);
+    console.log(this.color);
   }
 
   @HostListener('mouseover') onmouseover() {
