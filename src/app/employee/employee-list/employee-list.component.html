@@ -26,7 +26,7 @@
     </th>
   </thead>
   <tbody>
-    <tr *ngFor="let employee of employeeList | salary : amount">
+    <tr appHover *ngFor="let employee of employeeList | salary : amount">
       <td>{{employee.id | percent}}</td>
       <td [innerText]="employee.name | uppercase"></td>
       <td>{{employee.address | lowercase}}</td>
