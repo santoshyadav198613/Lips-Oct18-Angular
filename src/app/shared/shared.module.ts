@@ -4,6 +4,7 @@ import { MatInputModule, MatFormFieldModule, MatButtonModule } from '@angular/ma
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SalaryPipe } from '../custom/salary.pipe';
 import { HoverDirective } from '../custom/directive/hover.directive';
+import { ListModule } from 'list';
 
 @NgModule({
   declarations: [ SalaryPipe, HoverDirective ],
@@ -13,7 +14,8 @@ import { HoverDirective } from '../custom/directive/hover.directive';
     MatFormFieldModule,
     MatButtonModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ListModule
   ],
   exports : [
     CommonModule,
@@ -23,7 +25,8 @@ import { HoverDirective } from '../custom/directive/hover.directive';
     FormsModule,
     ReactiveFormsModule,
     SalaryPipe,
-    HoverDirective
+    HoverDirective,
+    ListModule
   ]
 })
 export class SharedModule { }

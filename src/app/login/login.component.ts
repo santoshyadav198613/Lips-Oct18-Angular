@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
     userName : ''
   };
 
+  headers = ['Name','Age','Date of Birth','Email'];
   constructor(
     private loginService: LoginService,
     private routeService: Router
