@@ -12,7 +12,8 @@ export class RegistrationComponent implements OnInit {
     dob: new Date(),
     email: '',
     firstName: '',
-    lastName: ''
+    lastName: '',
+    password: ''
   };
   constructor() { }
 
