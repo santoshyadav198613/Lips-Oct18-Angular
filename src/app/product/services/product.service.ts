@@ -10,10 +10,9 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts() {
-    console.log(sessionStorage.getItem('userToken'));
-    const tokenValue = sessionStorage.getItem('userToken');
-    const token = new HttpHeaders().set("access-token", tokenValue);
-    return this.http.get('/api/v1/product', { headers: token });
+    const header = new HttpHeaders().set("access-token", 
+    sessionStorage.getItem('userToken'));
+    return this.http.get('/api/v1/product', { headers: header });
   }
 
   getProduct() {
