@@ -7,6 +7,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './registration/registration.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,6 +28,9 @@ const routes: Routes = [
   {
     path: 'book', component: BookComponentComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path:'product', component : ProductComponent
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent }

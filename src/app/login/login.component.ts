@@ -12,11 +12,11 @@ import { User } from './service/user';
 export class LoginComponent implements OnInit {
 
   user: User = {
-    password : '',
-    userName : ''
+    password: '',
+    email: ''
   };
 
-  headers = ['Name','Age','Date of Birth','Email'];
+  headers = ['Name', 'Age', 'Date of Birth', 'Email'];
   constructor(
     private loginService: LoginService,
     private routeService: Router
@@ -27,9 +27,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    if (this.loginService.login(this.user)) {
-      // redirect
-      this.routeService.navigate(['/employee']);
-    }
+    // if (this.loginService.login(this.user)) {
+    //   // redirect
+    //   this.routeService.navigate(['/employee']);
+    // }
+
+    this.loginService.login(this.user).subscribe((result: any) => {
+      if (result.status === 'success') {
+        this.loginService.isLoggedIn = true;
+        sessionStorage.setItem('userToken',result.result);
+        this.routeService.navigate(['/employee']);
+      }
+    }, (error) => console.log(error));
   }
 }

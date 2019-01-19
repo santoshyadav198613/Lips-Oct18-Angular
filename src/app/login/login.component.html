@@ -4,7 +4,7 @@
 <lib-list [headers]="headers"></lib-list>
 <form #loginForm="ngForm" novalidate (submit)="login()">
   <mat-form-field>
-      <input matInput required type="text" [(ngModel)]="user.userName" 
+      <input matInput required type="text" [(ngModel)]="user.email" 
       name="username" placeholder="UserName">
   </mat-form-field>
   <mat-form-field>

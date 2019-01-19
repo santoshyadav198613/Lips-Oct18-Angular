@@ -25,6 +25,8 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
     console.log('OnInit is called');
     // this.productList = this.productService.getProduct();
 
+    this.productService.getProducts().subscribe((data)=> console.log(data),(err)=>console.log(err));
+
     this.Subscription = this.productService.getProduct().subscribe((data) => {
       this.productList = data;
     }, (err) => {

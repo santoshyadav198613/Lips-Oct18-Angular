@@ -8,12 +8,12 @@ export class CustominterceptorService implements HttpInterceptor {
   constructor() { }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (req.method === 'GET') {
-      console.log(req);
-      const request = req.clone({ headers: new HttpHeaders().set('apikey', 'sdfsdgdfg') });
-      console.log(request);
-      return next.handle(request);
-    }
+    // if (req.method === 'GET') {
+    //   console.log(req);
+    //   const request = req.clone({ headers: new HttpHeaders().set('apikey', 'sdfsdgdfg') });
+    //   console.log(request);
+    //   return next.handle(request);
+    // }
     return next.handle(req);
   }
 }
