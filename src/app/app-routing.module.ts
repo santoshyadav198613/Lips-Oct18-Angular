@@ -30,7 +30,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path:'product', component : ProductComponent
+    path:'product', component : ProductComponent, canActivate : [AuthGuard]
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent }
