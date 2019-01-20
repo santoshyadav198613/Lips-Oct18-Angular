@@ -18,7 +18,8 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   @ViewChild(ProductListComponent) productListComponent: ProductListComponent;
   @ViewChildren(ProductListComponent) prodListComponent: QueryList<ProductListComponent>;
   productList: IProduct[] = [];
-  constructor(@Self() private productService: ProductService, private fb: FormBuilder) {
+  constructor(@Self() private productService: ProductService,
+   private fb: FormBuilder) {
     console.log('Constructor Is called');
   }
 
@@ -47,25 +48,21 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
     //   { id: 2, name: 'Hair Oil', price: 150, mfd: new Date('20-Oct-2018') }
     // ];
     // console.log(this.productListComponent);
-     // console.log(this.prodListComponent);
-   // this.productListComponent.productList = this.productList;
+    // console.log(this.prodListComponent);
+    // this.productListComponent.productList = this.productList;
 
     // console.log(this.productDiv);
     // this.productDiv.nativeElement.innerText = 'Product Name';
   }
 
   getProducts() {
-
-    this.productService.getProducts().subscribe((data:any) => {
+    this.productService.getProducts().subscribe((data: any) => {
       this.productListComponent.productList = data.result;
-    }
-      ,
-      (err) => console.log(err));
-
+    }, (err) => console.log(err));
   }
 
   ngDoCheck(): void {
-    console.log('Do check is called');
+    // console.log('Do check is called');
   }
 
   ngAfterViewInit(): void {
@@ -82,22 +79,25 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   }
 
   addProduct() {
-    this.productService.addProduct(this.productForm.value).subscribe((data: any) => {
-      if (data.status === 'success') {
-
-        this.getProducts();
-        this.resetForm();
-      }
-    });
+    this.productService.addProduct(this.productForm.value).
+      subscribe((data: any) => {
+        if (data.status === 'success') {
+          this.getProducts();
+          this.resetForm();
+        }
+      });
   }
 
   resetForm() {
     this.productForm.patchValue({
-        name: '',
-        price: '',
-        mfd: ''
+      name: '',
+      price: '',
+      mfd: ''
     });
+    // this.productForm.markAsPristine({onlySelf: true });
+    // this.productForm.markAsDirty({onlySelf: false });
   }
+
   ngOnDestroy() {
     if (this.Subscription != null) {
       this.Subscription.Unsubscribe();
