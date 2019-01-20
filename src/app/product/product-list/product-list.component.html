@@ -16,11 +16,18 @@
     <th>
       Manufacturing Date
     </th>
+    <th>
+      Details
+    </th>
   </tr>
   <tr *ngFor="let product of productList">
     <td>{{product._id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
     <td>{{product.mfd}}</td>
+    <td>
+      <button [routerLink]="[product._id]" 
+    mat-raised-button color="primary">Details</button>
+    </td>
   </tr>
 </table>

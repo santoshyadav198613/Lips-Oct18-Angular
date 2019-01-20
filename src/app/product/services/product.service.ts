@@ -10,8 +10,8 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
   getProducts() {
-    return this.http.get<IProduct[]>('/api/v1/product', 
-    { headers: this.getHeader() });
+    return this.http.get<IProduct[]>('/api/v1/product',
+      { headers: this.getHeader() });
   }
 
   // getProduct() {
@@ -26,13 +26,18 @@ export class ProductService {
   // }
 
   addProduct(product: IProduct) {
-    return this.http.post('/api/v1/product', product, 
-    { headers: this.getHeader() })
+    return this.http.post('/api/v1/product', product,
+      { headers: this.getHeader() })
   }
 
   getHeader() {
     const header = new HttpHeaders().set("access-token",
       sessionStorage.getItem('userToken'));
     return header;
+  }
+
+  getProductDetails(id: string) {
+    return this.http.get('/api/v1/product/' + id, 
+    { headers: this.getHeader() })
   }
 }

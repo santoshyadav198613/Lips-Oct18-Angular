@@ -8,6 +8,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
 import { RegistrationComponent } from './registration/registration.component';
 import { ProductComponent } from './product/product.component';
+import { ProductListComponent } from './product/product-list/product-list.component';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -31,6 +33,9 @@ const routes: Routes = [
   },
   {
     path:'product', component : ProductComponent, canActivate : [AuthGuard]
+  },
+  {
+    path: 'product/:id', component : ProductDetailsComponent
   },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: '**', component: NotfoundComponent }

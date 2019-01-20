@@ -24,6 +24,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { EmailvalidatonDirective } from './custom/directive/emailvalidaton.directive';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { ProductDetailsComponent } from './product/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { environment } from '../environments/environment';
     LoginComponent,
     UserPipe,
     RegistrationComponent,
-    EmailvalidatonDirective
+    EmailvalidatonDirective,
+    ProductDetailsComponent
     ],
   imports: [
     BrowserModule,
