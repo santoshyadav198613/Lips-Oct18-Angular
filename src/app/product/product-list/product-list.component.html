@@ -19,6 +19,9 @@
     <th>
       Details
     </th>
+    <th>
+      Delete
+    </th>
   </tr>
   <tr *ngFor="let product of productList">
     <td>{{product._id}}</td>
@@ -26,8 +29,10 @@
     <td>{{product.price}}</td>
     <td>{{product.mfd}}</td>
     <td>
-      <button [routerLink]="[product._id]" 
-    mat-raised-button color="primary">Details</button>
+      <button [routerLink]="[product._id]" mat-raised-button color="primary">Details</button>
+    </td>
+    <td>
+      <button (click)="delete(product._id)" mat-raised-button color="primary">Delete</button>
     </td>
   </tr>
 </table>

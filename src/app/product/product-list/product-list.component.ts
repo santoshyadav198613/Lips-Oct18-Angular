@@ -1,4 +1,4 @@
-import { Component, OnInit , Self} from '@angular/core';
+import { Component, OnInit, Output, Self, EventEmitter } from '@angular/core';
 import { IProduct } from '../services/IProducts';
 import { ProductService } from '../services/product.service';
 
@@ -12,7 +12,13 @@ export class ProductListComponent implements OnInit {
 
   productList: IProduct[] = [];
 
+  @Output() deleteProduct = new EventEmitter<string>();
+
   ngOnInit() {
+  }
+
+  delete(productId) {
+    this.deleteProduct.emit(productId);
   }
 
 }

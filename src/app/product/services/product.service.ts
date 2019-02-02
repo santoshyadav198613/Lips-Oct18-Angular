@@ -37,7 +37,11 @@ export class ProductService {
   }
 
   getProductDetails(id: string) {
-    return this.http.get('/api/v1/product/' + id, 
-    { headers: this.getHeader() })
+    return this.http.get('/api/v1/product/' + id,
+      { headers: this.getHeader() })
+  }
+
+  deleteProduct(productId: string) {
+    return this.http.delete('/api/v1/product/' + productId);
   }
 }

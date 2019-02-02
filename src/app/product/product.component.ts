@@ -19,7 +19,7 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   @ViewChildren(ProductListComponent) prodListComponent: QueryList<ProductListComponent>;
   productList: IProduct[] = [];
   constructor(@Self() private productService: ProductService,
-   private fb: FormBuilder) {
+    private fb: FormBuilder) {
     console.log('Constructor Is called');
   }
 
@@ -59,6 +59,15 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
     this.productService.getProducts().subscribe((data: any) => {
       this.productListComponent.productList = data.result;
     }, (err) => console.log(err));
+  }
+
+  deleteProd(productId: string) {
+    console.log(productId);
+    this.productService.deleteProduct(productId).subscribe((data: any) => {
+      if(data.status === 'success') {
+        this.getProducts();
+      }
+    });
   }
 
   ngDoCheck(): void {
