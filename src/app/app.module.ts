@@ -26,6 +26,11 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { ProductDetailsComponent } from './product/product-details/product-details.component';
 import { ProfileComponent } from './profile/profile.component';
+import { APP_CONFIG, IAppConfig } from './custom';
+
+const AppConfig: IAppConfig = {
+  apiEndPoint: environment.apiEndpoint
+};
 
 @NgModule({
   declarations: [
@@ -44,7 +49,7 @@ import { ProfileComponent } from './profile/profile.component';
     EmailvalidatonDirective,
     ProductDetailsComponent,
     ProfileComponent
-    ],
+  ],
   imports: [
     BrowserModule,
     HttpClientModule, // add this module.
@@ -56,6 +61,7 @@ import { ProfileComponent } from './profile/profile.component';
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [{ provide: ProductService, useClass: ProductService },
+  { provide: APP_CONFIG, useValue: AppConfig },
   { provide: HTTP_INTERCEPTORS, useClass: CustominterceptorService, multi: true }],
   bootstrap: [AppComponent]
 })
