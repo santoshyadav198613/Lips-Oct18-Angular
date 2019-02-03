@@ -41,6 +41,14 @@ export class ProductService {
       { headers: this.getHeader() })
   }
 
+  getProductCount() {
+    return this.http.get('/api/v1/product/getProductCount');
+  }
+
+  getProductAndCount() {
+    return this.http.get('/api/v1/product/getProductandCount');
+  }
+
   deleteProduct(productId: string) {
     return this.http.delete('/api/v1/product/' + productId);
   }

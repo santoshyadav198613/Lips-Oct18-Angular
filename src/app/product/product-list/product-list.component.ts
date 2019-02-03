@@ -10,6 +10,7 @@ import { ProductService } from '../services/product.service';
 })
 export class ProductListComponent implements OnInit {
 
+  productCount = 0;
   productList: IProduct[] = [];
 
   @Output() deleteProduct = new EventEmitter<string>();

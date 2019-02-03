@@ -56,6 +56,14 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   }
 
   getProducts() {
+
+    this.productService.getProductAndCount().subscribe((data: any) => {
+      console.log(data);
+    });
+    this.productService.getProductCount().subscribe((data: any) => {
+      this.productListComponent.productCount = data.result;
+    });
+
     this.productService.getProducts().subscribe((data: any) => {
       this.productListComponent.productList = data.result;
     }, (err) => console.log(err));
@@ -64,7 +72,7 @@ export class ProductComponent implements OnInit, DoCheck, AfterViewInit, OnDestr
   deleteProd(productId: string) {
     console.log(productId);
     this.productService.deleteProduct(productId).subscribe((data: any) => {
-      if(data.status === 'success') {
+      if (data.status === 'success') {
         this.getProducts();
       }
     });
