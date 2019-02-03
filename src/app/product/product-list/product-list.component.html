@@ -23,7 +23,7 @@
       Delete
     </th>
   </tr>
-  <tr *ngFor="let product of productList">
+  <tr @rowsAnimation *ngFor="let product of productList">
     <td>{{product._id}}</td>
     <td>{{product.name}}</td>
     <td>{{product.price}}</td>
