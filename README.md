@@ -1,5 +1,7 @@
 # HotelManagementAppV7
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/santoshyadav198613/Lips-Oct18-Angular.svg)](https://greenkeeper.io/)
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
 ## Development server
